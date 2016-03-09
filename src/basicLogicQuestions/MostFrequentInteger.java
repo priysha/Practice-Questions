@@ -1,12 +1,12 @@
 package basicLogicQuestions;
-import java.util.Arrays;
+import java.util.*;
 import java.util.Scanner;
 
 public class MostFrequentInteger {
 	
 	public static void main (String args[]){
-		int[] array = {1,1,3,5,5,5,7,7,7,7};
-		int m = getMostPopularElement(array);
+		int[] array = {1,1,3,5,5,5,7,1};
+		int m = getMostPopUsingHash(array);//getMostPopularElement(array);
 		System.out.println(m);
 		
 	}
@@ -32,5 +32,25 @@ public class MostFrequentInteger {
 		return count > maxCount ? a[a.length -1]: mostPopElement; 
 		
 	}
+	public static int getMostPopUsingHash(int[] a){
+		HashMap<Integer,Integer> map = new HashMap<Integer,Integer>();
+		for(int i=0;i<a.length;i++){
+			if(map.containsKey(a[i]))
+				map.put(a[i], map.get(a[i])+1);
+			else map.put(a[i],1);
+		}
+		int ans=0;
+		int max=0;
+		
+		for(Integer i: map.keySet()){
+			if(map.get(i)>max){
+				ans = i;
+				max=map.get(i);
+			}
+			
+		}
+		return ans;
+	}
+	
 
 }

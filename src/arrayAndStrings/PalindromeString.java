@@ -5,18 +5,22 @@ public class PalindromeString {
 	public static void main(String args[]){
 		
 		String s = "abcddcba";
-		int n=1;
-		Boolean b;
-		if (n==0){
-			b = checkPalindromUsingLib(s);
-			
-		}
-		else{
-			char[] charArray = s.toCharArray();
-			b = checkPalindromWithoutUsingLib(charArray);
-		}
-		if (b) System.out.println("Yes, a palindrome");
-		else System.out.println("No,not a palindrome");
+		char ch ='A';
+		System.out.println((int)ch);
+		int a = 1;
+		System.out.println((char)(a+(int)('a')));
+//		int n=1;
+//		Boolean b;
+//		if (n==0){
+//			b = checkPalindromUsingLib(s);
+//			
+//		}
+//		else{
+//			char[] charArray = s.toCharArray();
+//			b = checkPalindromWithoutUsingLib(charArray);
+//		}
+//		if (b) System.out.println("Yes, a palindrome");
+//		else System.out.println("No,not a palindrome");
 	}
 	public static Boolean checkPalindromUsingLib(String s){
 		
